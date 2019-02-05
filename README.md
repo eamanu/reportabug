@@ -7,18 +7,27 @@ A Python tool for collecting information when reporting bugs.
 ## Installation
 
 ```
-python -m pip install git+https://github.com/zooba/reportabug
-python -m pip install reportabug
+$ python -m pip install git+https://github.com/zooba/reportabug
+$ python -m pip install reportabug
 ```
 
 Installing directly from GitHub is recommended for now, as not every improvement
 is being released to PyPI.
 
+## Installation from source
+
+To install from source you have to run the next commands:
+
+```
+$ git clone git@github.com:zooba/reportabug.git
+$ python setup.py install
+```
+
 ## Usage
 
 ```
-reportabug [--format FORMAT] [MODULE NAMES]
-python -m reportabug [--format FORMAT] [MODULE NAMES]
+$ reportabug [--format FORMAT] [MODULE NAMES]
+$ python -m reportabug [--format FORMAT] [MODULE NAMES]
 ```
 
 The report will be output to the console. You should copy-paste this into
@@ -32,7 +41,7 @@ pure.
 On Windows, you can pipe to `clip.exe` to store the output on the clipboard.
 
 ```
-python -m reportabug [MODULE NAMES] | clip
+$ python -m reportabug [MODULE NAMES] | clip
 ```
 
 Some personal information will be hidden, though a non-reversible summary of its contents is included as this information may be important. **Remember to review your report for personal information before sharing.**
