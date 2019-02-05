@@ -20,6 +20,7 @@ To install from source you have to run the next commands:
 
 ```
 $ git clone git@github.com:zooba/reportabug.git
+$ cd reportabug
 $ python setup.py install
 ```
 
