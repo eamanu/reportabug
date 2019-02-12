@@ -192,7 +192,13 @@ def format_markdown(data, github=False):
     )
     print()
     print("* Python", data["platform"]["version"], data["platform"]["architecture"])
-    print("* Platform", data["platform"]["platform"], data["platform"]["machine"])
+
+    platform_info = (data["platform"]["platform"]
+                     if data["platform"]["machine"] in
+                     data["platform"]["platform"] else
+                     data["platform"]["platform"] + ' ' + data["platform"]["machine"])
+
+    print("* Platform %s " % (platform_info))
 
     modules = data["module_info"]
     for k in sorted(modules):
