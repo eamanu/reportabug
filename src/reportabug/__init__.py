@@ -12,12 +12,12 @@ import argparse
 import getpass
 import hashlib
 import importlib
-import inspect
+# import inspect
 import os
 import platform
 import socket
 import sys
-import traceback
+# import traceback
 import unicodedata
 
 
@@ -34,7 +34,8 @@ def from_namespace(ns, *exclude):
 
 def join(values, sep=None):
     return (sep or ", ").join(
-        s if isinstance(s, str) else "None" if s is None else repr(s) for s in values
+        s if isinstance(s, str) else "None"
+        if s is None else repr(s) for s in values
     )
 
 
@@ -191,8 +192,10 @@ def format_markdown(data, github=False):
         ),
     )
     print()
-    print("* Python", data["platform"]["version"], data["platform"]["architecture"])
-    print("* Platform", data["platform"]["platform"], data["platform"]["machine"])
+    print("* Python", data["platform"]["version"],
+          data["platform"]["architecture"])
+    print("* Platform", data["platform"]["platform"],
+          data["platform"]["machine"])
 
     modules = data["module_info"]
     for k in sorted(modules):
